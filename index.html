@@ -91,7 +91,6 @@
       margin-bottom: 10px;
     }
 
-    /* Static instructions box */
     .instructions-box {
       width: 100%;
       background: #222;
@@ -103,7 +102,6 @@
       font-size: 1em;
     }
 
-    /* Generator UI */
     .generator {
       display: flex;
       flex-direction: column;
@@ -156,7 +154,7 @@
   <div class="button-container">
     <button class="neon-button blue" onclick="openModal('generatorModal')">Open Generator</button>
     <button class="neon-button blue" onclick="openModal('cheatModal')">Blooket Cheat</button>
-      <button class="neon-button blue" onclick="openModal('cheatModal')">blooket botter</button>
+    <button class="neon-button blue" onclick="openModal('botModal')">Blooket Botter</button>
   </div>
 
   <!-- Generator Modal -->
@@ -164,17 +162,14 @@
     <div id="generatorContent" class="modal-content">
       <div class="drag-handle">Drag Me</div>
       <span class="close" onclick="closeModal('generatorModal')">&times;</span>
-      
-      <!-- Static instructions box -->
       <div class="instructions-box">
         <p>
-          Step 1: Enter your text you wanna make your name on blooket for example pussy<br>
-          Step 2: Click Convert.<br>
-          Step 3: Copy the output and paste it into the name box on blooket<br>
-          Step 4: hit enter and there you go
+          Step 1: Enter your text<br>
+          Step 2: Click Convert<br>
+          Step 3: Copy the output and paste it into Blooket<br>
+          Step 4: Hit enter and done
         </p>
       </div>
-
       <div class="generator">
         <input id="nameInput" placeholder="Enter text">
         <button onclick="generateFancy()">Convert</button>
@@ -192,14 +187,25 @@
     </div>
   </div>
 
+  <!-- Bot Modal -->
+  <div id="botModal" class="modal">
+    <div id="botContent" class="modal-content">
+      <div class="drag-handle">Drag Me</div>
+      <span class="close" onclick="closeModal('botModal')">&times;</span>
+      <iframe src="https://media.discordapp.net/attachments/999685490036965447/1182346564786720798/HULK-SMASH.gif?ex=6944210b&is=6942cf8b&hm=2816bcf713d87a53040722ca97746dc4838c74c8301fd0a07699f181e77c025f&"></iframe>
+    </div>
+  </div>
+
   <script>
     // Modal open/close
     function openModal(id){ document.getElementById(id).style.display="block"; }
     function closeModal(id){ document.getElementById(id).style.display="none"; }
 
-    // Make both modals draggable
+    // Make all modals draggable
     dragElement(document.getElementById("generatorContent"));
     dragElement(document.getElementById("cheatContent"));
+    dragElement(document.getElementById("botContent"));
+
     function dragElement(elmnt){
       const dragHandle=elmnt.querySelector(".drag-handle");
       let pos1=0,pos2=0,pos3=0,pos4=0;
@@ -216,5 +222,3 @@
   </script>
 </body>
 </html>
-
-
