@@ -111,9 +111,9 @@
 <body>
   <h1>I hate blooket hub</h1>
   <div class="button-container">
-    <button class="neon-button blue" onclick="openModal('generatorModal')">Open Generator</button>
-    <button class="neon-button blue" onclick="loadCheatSite('blooketbot.com')">Blooket Cheat</button>
-    <button class="neon-button blue" onclick="openModal('botModal')">Blooket Botter</button>
+    <button class="neon-button blue" onclick="openModal('generatorModal')">name bypazzer</button>
+    <button class="neon-button blue" onclick="openModal('cheatModal')">Blooket che@ts</button>
+    <button class="neon-button blue" onclick="openModal('botModal')">not working</button>
   </div>
 
   <!-- Generator Modal -->
@@ -123,7 +123,7 @@
       <span class="close" onclick="closeModal('generatorModal')">&times;</span>
       <div class="instructions-box">
         <p>
-          Step 1: Enter your text<br>
+          Step 1: Enter your text that u want ur name to be on blooket<br>
           Step 2: Click Convert<br>
           Step 3: Copy the output and paste it into the name box on blooket<br>
           Step 4: Hit enter and done
@@ -137,12 +137,13 @@
     </div>
   </div>
 
-  <!-- Cheat Modal -->
+  <!-- Cheat Modal (Ultraviolet proxy to blooketbot.com) -->
   <div id="cheatModal" class="modal">
     <div id="cheatContent" class="modal-content">
       <div class="drag-handle">Drag Me</div>
       <span class="close" onclick="closeModal('cheatModal')">&times;</span>
-      <iframe id="cheatFrame" src=""></iframe>
+    <iframe src="https://lumi.learnenglishinmerton.org/lumi/nal/https%3A%2F%2FBlooketbot.com%2F"></iframe>
+
     </div>
   </div>
 
@@ -181,13 +182,6 @@
     const fancyMap={"a":"а","b":"b","c":"с","d":"d","e":"е","f":"f","g":"g","h":"h","i":"і","j":"ј","k":"k","l":"l","m":"m","n":"n","o":"о","p":"p","q":"q","r":"r","s":"ѕ","t":"t","u":"u","v":"v","w":"w","x":"x","y":"у","z":"v"};
     function convertText(input){ return input.split("").map(c=>fancyMap[c]||c).join(""); }
     function generateFancy(){ const input=document.getElementById("nameInput").value; document.getElementById("output").textContent=convertText(input); }
-
-    // Load cheat site dynamically into modal iframe
-    function loadCheatSite(domain) {
-      const frame = document.getElementById("cheatFrame");
-      frame.src = "https://travioletp.vercel.app";
-      openModal("cheatModal");
-    }
   </script>
 </body>
 </html>
