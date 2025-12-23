@@ -112,7 +112,10 @@
   <h1>I hate blooket hub</h1>
   <div class="button-container">
     <button class="neon-button blue" onclick="openModal('generatorModal')">name bypazzer</button>
-    <button class="neon-button blue" onclick="openModal('cheatModal'); alert('if it says 404 not found then cry abt it, or tell Bentley abt it so he can fix it, but if its hassan or angel then dont talk to bentley, just cry abt it');">Blooket cheats</button>
+    <button class="neon-button blue" onclick="alert('ik this is ass but ive literally spent hours everyday trying to figure out a method and this is the best i can get. also blooketbot.schoolcheats.net does not work with this until i find a better method'); runcheatModal(); ">
+  Blooket cheats
+</button>
+
     <button class="neon-button blue" onclick="openModal('botModal')">not working</button>
   </div>
 
@@ -136,17 +139,51 @@
       </div>
     </div>
   </div>
+  
+<script>  
+function runcheatModal() {
+  console.log("Executing Terbium...");
 
-  <!-- Cheat Modal (Ultraviolet proxy to blooketbot.com) -->
-  <div id="cheatModal" class="modal">
-    <div id="cheatContent" class="modal-content">
-      <div class="drag-handle">Drag Me</div>
-      <span class="close" onclick="closeModal('cheatModal')">&times;</span>
-    <iframe src="https://bigdih.shop/lumi/nal/https%3A%2F%2Fblooketbot.schoolcheats.net%2F"></iframe>
+  const win = window.open("about:blank", "_blank", "width=410,height=670");
+  if (!win) return alert("Popup blocked");
 
-    </div>
-  </div>
+  const innerScript = `
+    window.onbeforeunload = function(e) {
+      e.preventDefault();
+      e.returnValue = "Are you sure you want to leave this page?";
+      return e.returnValue;
+    };
 
+    setTimeout(() => {
+      var link = document.createElement("link");
+      link.rel = "icon";
+      link.href = "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.clever.com/&size=128";
+      document.head.appendChild(link);
+    }, 100);
+  `;
+
+  win.document.open();
+  win.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Clever l Portal</title>
+    </head>
+    <body style="margin:0; background:black;">
+      <iframe src="https://blooketbot.com?t=${Date.now()}"
+              style="border:none;width:100%;height:100%;"
+              allowfullscreen></iframe>
+
+      <script>
+        ${innerScript.replace(/<\/script>/g, "<\\/script>")}
+      <\/script>
+    </body>
+    </html>
+  `);
+  win.document.close();
+}
+</script>
   <!-- Bot Modal -->
   <div id="botModal" class="modal">
     <div id="botContent" class="modal-content">
@@ -157,7 +194,7 @@
   </div>
 
   <!-- Version footer -->
-  <div class="version">V1.0.4</div>
+  <div class="version">V1.0.6</div>
 
   <script>
     // Modal open/close
@@ -185,5 +222,4 @@
   </script>
 </body>
 </html>
-
 
