@@ -1,225 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>I hate hassan hub</title>
+  <title>Home</title>
+  <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
   <style>
     body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
+      margin: 0; font-family: 'Orbitron', sans-serif;
       background: #0f0f0f url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: white;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      height: 100vh; color: white; overflow: hidden;
     }
-
-    h1 {
-      font-size: 3em;
-      margin-bottom: 40px;
-      text-shadow: 0 0 10px #00f0ff;
-    }
-
-    .button-container {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
+    h1 { font-size: 3em; margin-bottom: 40px; text-shadow: 0 0 10px #00f0ff; text-align: center; }
+    .button-container { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; max-width: 900px; }
     .neon-button {
-      padding: 20px 40px;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px rgba(0,255,255,0.5);
+      padding: 15px 25px; font-size: 1.1em; border: none; border-radius: 12px;
+      cursor: pointer; transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,255,255,0.4); font-family: inherit;
     }
-
-    .neon-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(0,255,255,0.8);
-    }
-
+    .neon-button:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,255,255,0.7); }
     .blue { background: #00f0ff; color: #111; }
-
-    /* Modal styles */
     .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
+      display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+      width: 100%; height: 100%; background-color: rgba(0,0,0,0.85);
     }
-
     .modal-content {
-      background-color: #111;
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-      height: 80%;
-      box-shadow: 0 0 20px #00f0ff;
-      position: absolute;
-      top: 10%;
-      left: 10%;
+      background-color: #111; padding: 20px; border-radius: 15px;
+      width: 70%; height: 60%; box-shadow: 0 0 25px #00f0ff;
+      position: absolute; top: 20%; left: 15%;
     }
-
-    .close {
-      position: absolute;
-      top: -5px;
-      right: 5px;
-      font-size: 2em;
-      color: #fff;
-      cursor: pointer;
-    }
-
+    .close { position: absolute; top: 10px; right: 15px; font-size: 1.5em; color: #fff; cursor: pointer; }
     .drag-handle {
-      width: 100%;
-      height: 30px;
-      background: #222;
-      color: #fff;
-      cursor: move;
-      text-align: center;
-      line-height: 30px;
-      border-radius: 8px 8px 0 0;
-      margin-bottom: 10px;
+      width: 100%; height: 30px; background: #222; color: #0ff;
+      cursor: move; text-align: center; line-height: 30px;
+      border-radius: 10px 10px 0 0; margin-bottom: 15px; font-size: 0.8em;
     }
-
-    iframe {
-      width: 100%;
-      height: calc(100% - 40px);
-      border: none;
-      border-radius: 10px;
-    }
-
-    /* Version footer */
-    .version {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      font-size: 0.9em;
-      color: #0ff;
-      text-shadow: 0 0 5px #00f0ff;
-    }
+    .version { position: fixed; bottom: 10px; right: 10px; font-size: 0.8em; color: #0ff; opacity: 0.7; }
   </style>
 </head>
 <body>
   <h1>I hate blooket hub</h1>
   <div class="button-container">
     <button class="neon-button blue" onclick="openModal('generatorModal')">name bypazzer</button>
-    <button class="neon-button blue" onclick="alert('ik this is ass but ive literally spent hours everyday trying to figure out a method and this is the best i can get. also blooketbot.schoolcheats.net does not work with this until i find a better method'); runcheatModal(); ">
-  Blooket cheats
-</button>
-
-    <button class="neon-button blue" onclick="openModal('botModal')">not working</button>
+    
+    <button class="neon-button blue" onclick="launchStealth('https://blooketbot.com')">
+        Blooket cheats
+    </button>
+    
+    <button class="neon-button blue" onclick="launchStealth('https://www.croxyproxy.com')">
+        Web Unblocker
+    </button>
+    
+    <button class="neon-button blue" onclick="launchCustom()">
+        Custom URL
+    </button>
   </div>
 
-  <!-- Generator Modal -->
   <div id="generatorModal" class="modal">
     <div id="generatorContent" class="modal-content">
-      <div class="drag-handle">Drag Me</div>
+      <div class="drag-handle">DRAG TO MOVE</div>
       <span class="close" onclick="closeModal('generatorModal')">&times;</span>
-      <div class="instructions-box">
-        <p>
-          Step 1: Enter your text that you want you name to be on blooket<br>
-          Step 2: Click Convert<br>
-          Step 3: Copy the output and paste it into the name box on blooket<br>
-          Step 4: Hit enter and done
-        </p>
-      </div>
-      <div class="generator">
-        <input id="nameInput" placeholder="Enter text">
-        <button onclick="generateFancy()">Convert</button>
-        <p id="output" class="output"></p>
+      <div style="text-align:center; padding-top: 20px;">
+        <p>Convert text to bypass Blooket filters</p>
+        <input id="nameInput" placeholder="Enter name..." style="background:#111; color:#0ff; border:2px solid #0ff; padding:10px; border-radius:5px; width:60%;">
+        <button onclick="generateFancy()" style="background:#0ff; border:none; padding:10px 20px; cursor:pointer; font-weight:bold; border-radius:5px; margin-left:10px;">Convert</button>
+        <div id="output" style="color:#fff; margin-top:30px; font-size:2em; letter-spacing: 2px; border: 1px dashed #0ff; display:inline-block; padding: 10px;"></div>
       </div>
     </div>
   </div>
-  
-<script>  
-function runcheatModal() {
-  console.log("Executing Terbium...");
 
-  const win = window.open("about:blank", "_blank", "width=410,height=670");
-  if (!win) return alert("Popup blocked");
+  <div class="version">V1.2.0</div>
 
-  const innerScript = `
-    window.onbeforeunload = function(e) {
-      e.preventDefault();
-      e.returnValue = "Are you sure you want to leave this page?";
-      return e.returnValue;
-    };
+<script> 
+function launchCustom() {
+  let url = prompt("Enter URL (with https://):", "https://");
+  if (url && url !== "https://") {
+    launchStealth(url);
+  }
+}
 
-    setTimeout(() => {
-      var link = document.createElement("link");
-      link.rel = "icon";
-      link.href = "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.clever.com/&size=128";
-      document.head.appendChild(link);
-    }, 100);
+function launchStealth(url) {
+  const win = window.open("about:blank", "_blank");
+  if (!win) return alert("Please allow popups!");
+
+  // Anti-Close + Panic Key (ESC)
+  const antiCloseScript = `
+    window.onbeforeunload = function() { return "Stay on page?"; };
+    window.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") { window.location.href = "https://classroom.google.com/h"; }
+    });
   `;
 
-  win.document.open();
   win.document.write(`
-    <!DOCTYPE html>
     <html>
-    <head>
-      <meta charset="utf-8">
-      <title>Clever l Portal</title>
-    </head>
-    <body style="margin:0; background:black;">
-      <iframe src="https://blooketbot.com?t=${Date.now()}"
-              style="border:none;width:100%;height:100%;"
-              allowfullscreen></iframe>
-
-      <script>
-        ${innerScript.replace(/<\/script>/g, "<\\/script>")}
-      <\/script>
-    </body>
+      <head>
+        <title>Google Classroom</title>
+        <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+        <style>body { margin:0; padding:0; overflow:hidden; background:black; } iframe { width:100%; height:100vh; border:none; }</style>
+      </head>
+      <body>
+        <iframe src="${url}"></iframe>
+        <script>${antiCloseScript.replace(/<\/script>/g, "<\\/script>")}<\/script>
+      </body>
     </html>
   `);
   win.document.close();
 }
+
+function openModal(id){ document.getElementById(id).style.display="block"; }
+function closeModal(id){ document.getElementById(id).style.display="none"; }
+dragElement(document.getElementById("generatorContent"));
+
+function dragElement(elmnt){
+  const dragHandle=elmnt.querySelector(".drag-handle");
+  let pos1=0,pos2=0,pos3=0,pos4=0;
+  dragHandle.onmousedown=dragMouseDown;
+  function dragMouseDown(e){ e.preventDefault(); pos3=e.clientX; pos4=e.clientY; document.onmouseup=closeDragElement; document.onmousemove=elementDrag; }
+  function elementDrag(e){ e.preventDefault(); pos1=pos3-e.clientX; pos2=pos4-e.clientY; pos3=e.clientX; pos4=e.clientY; elmnt.style.top=(elmnt.offsetTop-pos2)+"px"; elmnt.style.left=(elmnt.offsetLeft-pos1)+"px"; }
+  function closeDragElement(){ document.onmouseup=null; document.onmousemove=null; }
+}
+
+const fancyMap={"a":"а","b":"b","c":"с","d":"d","e":"е","f":"f","g":"g","h":"h","i":"і","j":"ј","k":"k","l":"l","m":"m","n":"n","o":"о","p":"p","q":"q","r":"r","s":"ѕ","t":"t","u":"u","v":"v","w":"w","x":"x","y":"у","z":"v"};
+function generateFancy(){ 
+  const input=document.getElementById("nameInput").value.toLowerCase(); 
+  document.getElementById("output").textContent = input.split("").map(c=>fancyMap[c]||c).join(""); 
+}
 </script>
-  <!-- Bot Modal -->
-  <div id="botModal" class="modal">
-    <div id="botContent" class="modal-content">
-      <div class="drag-handle">Drag Me</div>
-      <span class="close" onclick="closeModal('botModal')">&times;</span>
-      <iframe src="https://media.discordapp.net/attachments/999685490036965447/1182346564786720798/HULK-SMASH.gif"></iframe>
-    </div>
-  </div>
-
-  <!-- Version footer -->
-  <div class="version">V1.0.6</div>
-
-  <script>
-    // Modal open/close
-    function openModal(id){ document.getElementById(id).style.display="block"; }
-    function closeModal(id){ document.getElementById(id).style.display="none"; }
-
-    // Make modals draggable
-    dragElement(document.getElementById("generatorContent"));
-    dragElement(document.getElementById("cheatContent"));
-    dragElement(document.getElementById("botContent"));
-
-    function dragElement(elmnt){
-      const dragHandle=elmnt.querySelector(".drag-handle");
-      let pos1=0,pos2=0,pos3=0,pos4=0;
-      dragHandle.onmousedown=dragMouseDown;
-      function dragMouseDown(e){ e.preventDefault(); pos3=e.clientX; pos4=e.clientY; document.onmouseup=closeDragElement; document.onmousemove=elementDrag; }
-      function elementDrag(e){ e.preventDefault(); pos1=pos3-e.clientX; pos2=pos4-e.clientY; pos3=e.clientX; pos4=e.clientY; elmnt.style.top=(elmnt.offsetTop-pos2)+"px"; elmnt.style.left=(elmnt.offsetLeft-pos1)+"px"; }
-      function closeDragElement(){ document.onmouseup=null; document.onmousemove=null; }
-    }
-
-    // Fancy text generator
-    const fancyMap={"a":"а","b":"b","c":"с","d":"d","e":"е","f":"f","g":"g","h":"h","i":"і","j":"ј","k":"k","l":"l","m":"m","n":"n","o":"о","p":"p","q":"q","r":"r","s":"ѕ","t":"t","u":"u","v":"v","w":"w","x":"x","y":"у","z":"v"};
-    function convertText(input){ return input.split("").map(c=>fancyMap[c]||c).join(""); }
-    function generateFancy(){ const input=document.getElementById("nameInput").value; document.getElementById("output").textContent=convertText(input); }
-  </script>
 </body>
 </html>
-
